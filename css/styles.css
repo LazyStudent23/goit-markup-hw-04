@@ -385,7 +385,8 @@ img {
         transition: background-color var(--transition);
 }
 
-.member-soc-link:hover {
+.member-soc-link:hover,
+.member-soc-link:focus {
     background-color: var(--hover-focus-color);
 }
 
@@ -405,6 +406,7 @@ img {
         text-align: center;
         text-transform: capitalize;
         color: var(--secondary-color);
+        margin-bottom: 72px;
 }
 
 .customers-logo-list {
@@ -423,11 +425,28 @@ img {
 .customers-logo-link {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8E8F99;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    padding: 16px 32px;
+}
+
+.customers-logo-link:hover,
+.customers-logo-link:focus {
+    border-color: var(--hover-focus-color);
+}
+
+.customers-logo-link:hover .customers-logo,
+.customers-logo-link:focus .customers-logo {
+    fill: var(--hover-focus-color);
 }
 
 .customers-logo {
-    border-color: currentColor;
     fill: currentColor;
+    transition: color var(--transition);
 }
 
 .button-list {

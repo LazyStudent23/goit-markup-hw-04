@@ -17,11 +17,14 @@
     --secondary-text-size: 20px;
     --title-text-size: 36px;
     --hero-title-text: 56px;
+    --benefits-item-color: #F4F4FD;
     --member-card-color: #FFFFFF;
     --portfolio-card-color: #FFFFFF;
     --page-background-color: #FFFFFF;
     --button-portfolio-border: #E7E9FC;
     --portfolio-item-border: #E7E9FC;
+    --member-soc-color: #4D5AE5;
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -138,6 +141,7 @@ img {
     display: block;
     padding-top: 24px;
         padding-bottom: 24px;
+    transition: color var(--transition);
 }
 
 .navigation-link:hover,
@@ -170,6 +174,12 @@ img {
     display: block;
     padding-top: 24px;
         padding-bottom: 24px;
+    transition: color var(--transition);
+}
+
+.address-menu-link:hover,
+.address-menu-link:focus {
+    color: var(--hover-focus-color);
 }
 
 /* MAIN */
@@ -177,8 +187,14 @@ img {
 .hero {
     text-align: center;
     background-color: var(--secondary-color);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),  url(../images/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     padding-top: 188px;
     padding-bottom: 188px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .hero-container {
@@ -225,6 +241,7 @@ img {
 
 .benefits-container {
 
+
 }
 
 .benefits-list {
@@ -234,6 +251,20 @@ img {
 
 .benefits-item {
     width: calc((100% - 24px * 3) / 4);
+}
+
+.benefits-item-icon {
+    width: 264px;
+    height: 112px;
+    background-color: var(--benefits-item-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits-icon {
+    
 }
 
 .benefits-title {
@@ -306,7 +337,8 @@ img {
 .member-card {
     background: var(--member-card-color);
     width: calc((100% - 24px * 3) / 4);
-    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+        border-radius: 0px 0px 4px 4px;
 }
 
 .member-container {
@@ -327,6 +359,75 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
+}
+
+.member-soc {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.member-soc-item {
+    background-color: var(--member-soc-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.member-soc-link {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        transition: background-color var(--transition);
+}
+
+.member-soc-link:hover {
+    background-color: var(--hover-focus-color);
+}
+
+.member-soc-icon {
+    fill: var(--member-card-color);
+}
+
+.customers{
+    padding: 120px 0;
+}
+
+.customers-title {
+    font-weight: 700;
+        font-size: var(--title-text-size);
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: capitalize;
+        color: var(--secondary-color);
+}
+
+.customers-logo-list {
+    display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+}
+
+.customers-logo-item {
+    height: 88px;
+    width: calc((100% - 24px * 5) / 6);
+}
+
+.customers-logo-link {
+    width: 100%;
+    height: 100%;
+}
+
+.customers-logo {
+    border-color: currentColor;
+    fill: currentColor;
 }
 
 .button-list {

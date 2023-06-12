@@ -496,6 +496,7 @@ img {
     padding: 12px 24px;
     border: 1px solid var(--button-portfolio-border);
         border-radius: 4px;
+        transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .button-navigation:hover,
@@ -524,7 +525,7 @@ img {
 }
 
 .portfolio-item:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    
 }
 
 .portfolio-item:hover .item-hover-block {
@@ -532,7 +533,15 @@ img {
 }
 
 .item-card {
+    display: block;
     background: var(--portfolio-card-color);
+    transition: box-shadow var(--transition);
+
+}
+
+.item-card:hover,
+.item-card:focus {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-container {
@@ -563,20 +572,21 @@ img {
 }
 
 .item-hover-block {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding: 40px 32px 32px;
-    background-color: var(--item-hover-background);
-    transform: translateY(100%);
-    transition: transform var(--transition);
+    
 }
 
 .item-hover-text {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--item-hover-text);
+    position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 40px 32px;
+        background-color: var(--item-hover-background);
+        transform: translateY(100%);
+        transition: transform var(--transition);
 }
 
 /* FOOTER */
@@ -693,6 +703,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
     position: absolute;
         top: 24px;
         right: 24px;
@@ -702,11 +713,13 @@ img {
     background: #E7E9FC;
     cursor: pointer;
         border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: background-color var(--transition), border var(--transition);
 }
 
 .close-btn:hover,
 .close-btn:focus {
     background-color: var(--hover-focus-color);
+    border: none;
 }
 
 .close-btn:hover .close,
@@ -715,9 +728,8 @@ img {
 }
 
 .close {
-    width: 8px;
-    height: 8px;
     fill: currentColor;
+    transition: fill var(--transition);
 }
 
 .is-hidden {

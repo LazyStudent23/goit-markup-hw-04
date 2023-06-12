@@ -28,6 +28,8 @@
     --portfolio-item-border: #E7E9FC;
     --member-soc-color: #4D5AE5;
     --social-hover-color: #31D0AA;
+    --default-color: #ffffff;
+    --modal-overlay: rgba(46, 47, 66, 0.4);
     --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -513,6 +515,11 @@ img {
     width: calc((100% - 48px) / 3);
     overflow: hidden;
 }
+
+.portfolio-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-item:hover .item-hover-block {
     transform: translate(0);
 }
@@ -545,6 +552,7 @@ img {
 
 .item-hover-box {
     position: relative;
+    overflow: hidden;
 }
 
 .item-hover-block {
@@ -638,4 +646,68 @@ img {
 
 .social-icon {
     fill: var(--social-icon-color);
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay);
+    transition: visibility var(--transition), opacity var(--transition);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(1);
+    transition: transform var(--transition);
+    width: 408px;
+        min-height: 584px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+    background-color: #FCFCFC;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scaleX(0);
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+        top: 24px;
+        right: 24px;
+    width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    background: #E7E9FC;
+    cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    background-color: var(--hover-focus-color);
+}
+
+.close-btn:hover .close,
+.close-btn:focus .close {
+    fill: var(--default-color);
+}
+
+.close {
+    width: 8px;
+    height: 8px;
+    fill: currentColor;
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }

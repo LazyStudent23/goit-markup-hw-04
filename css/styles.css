@@ -545,8 +545,8 @@ img {
 }
 
 
-.item-card:hover .item-hover-box,
-.item-card:focus .item-hover-box {
+.item-card:hover .item-hover-text,
+.item-card:focus .item-hover-text {
     transform: translateY(0);
 }
 
